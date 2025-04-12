@@ -12,6 +12,10 @@ document.querySelector('.btn-primary').addEventListener('click',()=>{
         myAlert(false,"手机号要11位")
         return
     }
+    if(data.code.length!=6){
+        myAlert(false,"验证码要6位")
+        return
+    }
 axios({
     url:'/v1_0/authorizations',
     method:'POST',
